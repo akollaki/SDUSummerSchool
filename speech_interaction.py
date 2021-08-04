@@ -13,7 +13,7 @@ def google_in(lang):
         r.adjust_for_ambient_noise(source, duration=0.5)
         print("Say something!")
         try:
-            audio = r.listen(source, timeout=3, phrase_time_limit=2)
+            audio = r.listen(source, timeout=5, phrase_time_limit=3)
         except sr.WaitTimeoutError:
             return "Timeout"
         else:
@@ -39,3 +39,15 @@ def speak(text):
         f.seek(0)  # seek to zero after writing
         audio = AudioSegment.from_file(f, format="mp3") # create audio from buffer
         play(audio) # play audio
+
+
+# Example for speech recognition
+speech = google_in('en-GB')
+
+# Example for keyword detection
+keyword = 'hello'
+if find_whole_word(keyword)(speech):
+    print(f'I heard {keyword}')
+
+# Example for text to speech
+speak(keyword)
