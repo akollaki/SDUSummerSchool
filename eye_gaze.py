@@ -20,6 +20,7 @@ def read_csv(filename, lower, upper):
                        if eye_contact([float(lastRow[11]), float(lastRow[12])], lower, upper):
                            return
                    except IndexError:
+                       print('Caught error')
                        pass
 
 if __name__ == '__main__':
