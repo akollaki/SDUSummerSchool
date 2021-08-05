@@ -16,14 +16,17 @@ def read_csv(filename, lower, upper):
                lastRow = data[-1].split(',')
                if lastRow[0] != lastRead and lastRow[4] != '0':
                    lastRead = lastRow[0]
-                   if eye_contact([float(lastRow[11]), float(lastRow[12])], lower, upper):
-                       return
+                   try:
+                       if eye_contact([float(lastRow[11]), float(lastRow[12])], lower, upper):
+                           return
+                   except IndexError:
+                       pass
 
 if __name__ == '__main__':
    lowerBound = -0.3
    upperBound = 0.3
    try:
-       while True: 
+       while True:
            read_csv("output", lowerBound, upperBound)
            print('looking at camera')
            # reach here if eye vectors are within lower and upper bounds
