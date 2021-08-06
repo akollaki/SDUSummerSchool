@@ -1,4 +1,3 @@
 # SDUSummerSchool
 
-Instructions file:
-https://www.overleaf.com/9575512765gqyknwscjcdx
+Instructions can be found in the HRI Summer School.pdf document or here: https://www.overleaf.com/read/zfmyvmsnsxvh
